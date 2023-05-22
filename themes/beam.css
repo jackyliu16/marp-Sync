@@ -5,9 +5,10 @@
 :root {
   font-family: "CMU Sans Serif", "Segoe UI", Helvetica, sans-serif;
   --main: #1f38c5;
-  --secondary: #141414;
+  --secondary: #1f38c6;
 }
 
+/* --secondary: #141414; */
 section {
   background-color: #ffffff;
   /* bottom two-coloured bar in base64 svg */

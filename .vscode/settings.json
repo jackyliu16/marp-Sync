@@ -1,0 +1,9 @@
+{
+    "markdown.marp.themes": [
+        "./themes/beam.css",
+        "./themes/border.css",
+        "./themes/academic.css",
+        "./themes/gradient.css",
+        "./themes/graph_paper.css",
+    ]
+}
