@@ -5,5 +5,11 @@
         "./themes/academic.css",
         "./themes/gradient.css",
         "./themes/graph_paper.css",
+        "./themes/am_blue.css",
+        "./themes/am_green.css",
+        "./themes/am_red.css",
+        "./themes/am_dark.css",
+        "./themes/am_brown.css",
+        "./themes/am_purple.css",
     ]
 }
