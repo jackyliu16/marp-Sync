@@ -581,6 +581,10 @@ section.toc_b ul li {
   counter-increment: toc_b;
 } 
 
+section.toc_b a {
+  font-size: var(--font-size-2-3);
+}
+
 section.toc_b ul li::before {
   content: counter(toc_b);
   margin: 0px 20px 0px 0px;
