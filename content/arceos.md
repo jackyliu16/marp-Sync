@@ -29,19 +29,19 @@ headingDivider: [2,3]
 <!-- _paginate: "" -->
 
 - [发展历史](#3)
-- [开发背景](#9) 
-- [ArceOS 整体架构](#15)
-- [ArceOS 特性](#19)
+- [开发背景](#10) 
+- [ArceOS 整体架构](#13)
+- [ArceOS 特性](#18)
 
 ## 发展历史
 <!-- _class: trans -->
 <!-- _footer: "" -->
-<!-- _paginate: "" -->
 
 ### ExoKernel
 <!-- _class: fixedtitleA -->
+<!-- _class: navbar -->
+<!-- _header: \ **发展历史** *开发背景* *ArceOS整体架构* *ArceOS特性*-->
 <!-- _footer: "" -->
-<!-- _paginate: "" -->
 
 ![](../images/arceos/ExoKernel.png)
 
@@ -52,6 +52,8 @@ headingDivider: [2,3]
 
 ### Rethinking the library OS from the top dow
 <!-- _class: fixedtitleA -->
+<!-- _class: navbar -->
+<!-- _header: \ **发展历史** *开发背景* *ArceOS整体架构* *ArceOS特性*-->
  
 ![auto w:900 h:580](../images/arceos/RefactorWni7.png)
 
@@ -61,11 +63,20 @@ headingDivider: [2,3]
 
 ### Unikernel
 <!-- _class: fixedtitleA -->
+<!-- _class: navbar -->
+<!-- _header: \ **发展历史** *开发背景* *ArceOS整体架构* *ArceOS特性*-->
 
-TODO: FINISH IT
+![](../images/arceos/unikernel.png)
+
+<!--
+12 年左右的时候，Google 在开发云服务的时候，尝试通过将操作系统内核与应用程序捆绑在一起以提升云服务的效率以及安全性。
+单一内核，轻量级的虚拟机，它们具有比传统操作系统更小的攻击面、更高的性能和更低的资源消耗等优势。
+HermiTux 通过在系统调用级模拟 Linux 应用程序二进制接口（ABI）来实现兼容性。这种方法允许 HermiTux 在不修改应用程序本身的情况下运行原生 Linux 可执行文件。
+-->
 
 ### Unikraft
-<!-- _class: fixedtitleA -->
+<!-- _class: fixedtitleA navbar-->
+<!-- _header: \ **发展历史** *开发背景* *ArceOS整体架构* *ArceOS特性*-->
 
 ![](../images/arceos/Unikraft.png)
 
@@ -76,7 +87,9 @@ TODO 考虑要不要加有关于链接的说明
 
 
 ### Theseus
-<!-- _class: fixedtitleA -->
+<!-- _class: fixedtitleA largetext -->
+<!-- _class: navbar -->
+<!-- _header: \ **发展历史** *开发背景* *ArceOS整体架构* *ArceOS特性*-->
 
 Theseus是一个用Rust从头开始编写的新操作系统，旨在尝试新的操作系统结构，更好的状态管理，以及如何利用语言内设计原则将操作系统的责任（如资源管理）转移到编译器中。
 
@@ -91,6 +104,8 @@ Theseus 操作系统其实也很大程度上基于了这样的设想，这个操
 
 ### Theseus
 <!-- _class: fixedtitleA -->
+<!-- _class: navbar -->
+<!-- _header: \ **发展历史** *开发背景* *ArceOS整体架构* *ArceOS特性*-->
 
 ![w:1400 h:500](../images/arceos/Theseus.png)
 
@@ -104,11 +119,14 @@ MappedPages（MP）对象是忒修斯对所拥有的内存区域的抽象
 # Ref: https://www.theseus-os.com/Theseus/book/design/design.html#cell--crate
 -->
 
-## ArceOS 背景
+## ArceOS 开发背景
 <!-- _class: trans -->
 
+
 ### AcerOS::前言
-<!-- _class: fixedtitleA -->
+<!-- _class: fixedtitleA navbar-->
+<!-- _header: \ *发展历史* **开发背景** *ArceOS整体架构* *ArceOS特性*-->
+
 
 ⽬前计算机软硬件的发展趋势：
 - 硬件：新型硬件层出不穷
@@ -125,7 +143,9 @@ MappedPages（MP）对象是忒修斯对所拥有的内存区域的抽象
 -->
 
 ### ArceOS::组件化 OS 的初步探索
-<!-- _class: fixedtitleA -->
+<!-- _class: fixedtitleA navbar-->
+<!-- _header: \ *发展历史* **开发背景** *ArceOS整体架构* *ArceOS特性*-->
+
 
 - 多架构：x86_64/aarch64/riscv64
 - 多种调度算法：FIFO、Round-robin、CFS
@@ -134,8 +154,12 @@ MappedPages（MP）对象是忒修斯对所拥有的内存区域的抽象
 - FAT32 ⽂件系统
 - Rust / C 语⾔应⽤程序
 
+## ArceOS 整体架构
+<!-- _class: trans -->
+
 ### ArceOS::整体架构
-<!-- _class: cols-2 -->
+<!-- _class: cols-2 navbar-->
+<!-- _header: \ *发展历史* *开发背景* **ArceOS整体架构** *ArceOS特性*-->
 
 <div class=ldiv>
 
@@ -162,7 +186,9 @@ ArceOS 最开始的时候基于开发能运行在车用操作系统 Hypervisor �
 -->
 
 ### ArceOS::整体架构
-<!-- _class: cols-2 -->
+<!-- _class: cols-2 navbar-->
+<!-- _header: \ *发展历史* *开发背景* **ArceOS整体架构** *ArceOS特性*-->
+
 
 <div class=ldiv>
 
@@ -187,7 +213,9 @@ ArceOS 最开始的时候基于开发能运行在车用操作系统 Hypervisor �
 其实按照目前的设计来说，还不是完全没有与操作系统任何关联，部分地方是依赖操作系统提供接口实现的。
 -->
 ### ArceOS::整体架构
-<!-- _class: cols-2 -->
+<!-- _class: cols-2 navbar -->
+<!-- _header: \ *发展历史* *开发背景* **ArceOS整体架构** *ArceOS特性*-->
+
 
 <div class=ldiv>
 
@@ -219,6 +247,10 @@ ArceOS 最开始的时候基于开发能运行在车用操作系统 Hypervisor �
 -->
 
 ### ArceOS::代码统计
+<!-- _class: navbar -->
+<!-- _header: \ *发展历史* *开发背景* **ArceOS整体架构** *ArceOS特性*-->
+
+
 
 ![](../images/arceos/ArceAppTable.png)
 
@@ -233,7 +265,8 @@ TODO: 是否要删除
 
 
 ### ArceOS::基于 features 的模块配置
-<!-- _class: fixedtitleA -->
+<!-- _class: fixedtitleA navbar-->
+<!-- _header: \ *发展历史* *开发背景* *ArceOS整体架构* **ArceOS特性**-->
 
 可以简单的通过对于应用程序 `Cargo.toml` 文件的修改实现对于启用不同模块的不同功能。
 
@@ -256,8 +289,23 @@ libax = {
 同时，rust语言所具有的条件编译特性也可以很好的避免我们在编译的时候链接到非必要模块上。
 -->
 
+### ArceOS::模块复用
+<!-- _class: fixedtitleA navbar -->
+<!-- _header: \ *发展历史* *开发背景* *ArceOS整体架构* **ArceOS特性**-->
+
+
+crates 中的各个包与操作系统底层实现无关，是可以在不同的操作系统之间实现复用的。
+
+![](../images/arceos/modules-reuse.png)
+
+
+<!--
+这个设计实际上还没有对外公开发布到 crates，目前内部存有的 linked_list 实际上与 RFL[rust-for-linux::kernel::linked_list]，SCH[arceos::crates::scheduler]的实现是一致的
+-->
+
 ### ArceOS::组件相互调用
-<!-- _class: cols-2 -->
+<!-- _class: cols-2 navbar -->
+<!-- _header: \ *发展历史* *开发背景* *ArceOS整体架构* **ArceOS特性**-->
 
 <div class=ldiv>
 
@@ -290,7 +338,8 @@ libax = {
 -->
 
 ### ArceOS::组件相互调用
-<!-- _class: fixedtitleA -->
+<!-- _class: fixedtitleA navbar-->
+<!-- _header: \ *发展历史* *开发背景* *ArceOS整体架构* **ArceOS特性**-->
 
 底层调用上层 || 循环依赖: Rust FFI 进⾏调⽤；axtask::kernel_guard(crate) 需要关闭内核抢占
 
@@ -319,7 +368,8 @@ impl kernel_guard::KernelGuardIf for KernelGuardIfImpl {
 -->
 
 ### ArceOS::组件相互调用
-<!-- _class: fixedtitleA -->
+<!-- _class: fixedtitleA navbar-->
+<!-- _header: \ *发展历史* *开发背景* *ArceOS整体架构* **ArceOS特性**-->
 
 ```rust
 // crates/kernel_guard/src/lib.rs
@@ -349,6 +399,8 @@ fn disable_preempt() {
 
 ### ArceOS::组件注册
 <!-- _class: fixedtitleA -->
+<!-- _class: navbar -->
+<!-- _header: \ *发展历史* *开发背景* *ArceOS整体架构* **ArceOS特性**-->
 
 基于 `axfs_vfs::VfsOps` 和 `axfs_vfs::VfsNodeOps` 在应用程序中实现⼀个⽂件系统：
 
@@ -374,6 +426,8 @@ impl VfsNodeOps for NewFileNode {
 
 ### ArceOS::组件注册
 <!-- _class: fixedtitleA -->
+<!-- _class: navbar -->
+<!-- _header: \ *发展历史* *开发背景* *ArceOS整体架构* **ArceOS特性**-->
 ```rust
 struct MyFileSystemIfImpl;
 #[crate_interface::impl_interface]
@@ -392,6 +446,8 @@ crate_interface = { path = "../../../crates/crate_interface" }
 
 ### ArceOS::单元测试
 <!-- _class: fixedtitleA -->
+<!-- _class: navbar -->
+<!-- _header: \ *发展历史* *开发背景* *ArceOS整体架构* **ArceOS特性**-->
 - 可以允许应用程序在不运行完整操作系统的情况下运行，在本机用户态对于应用程序或者模块进行调试
 
 ```bash
@@ -417,6 +473,7 @@ TODO
 
 ### ArceOS::Future Work
 <!-- _class: cols-2 navbar -->
+<!-- _header: \ *发展历史* *开发背景* *ArceOS整体架构* **ArceOS特性**-->
 
 <div class=ldiv>
 
@@ -450,8 +507,11 @@ TODO
 -->
 
 ## THANKS !
+<!-- _class: largetext -->
 
 @Repo: github.com/arceos-org/arceos
 @Email: 18922251299@163.com
+@操作系统训练营： github.com/learningos
+@rCoreOS开源社区：github.com/rcore-os
 
-
+特别鸣谢：marp, AweSome-marp 提供幻灯片生成
