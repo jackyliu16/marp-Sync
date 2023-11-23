@@ -5,7 +5,6 @@ theme: am_blue
 paginate: true
 headingDivider: [2,3]
 ---
-<!-- TODO: fonts size -->
 <!-- _class: cover_b
 <!-- _header: "" --> 
 <!-- _footer: "" --> 
@@ -513,5 +512,6 @@ TODO
 @Email: 18922251299@163.com
 @操作系统训练营： github.com/learningos
 @rCoreOS开源社区：github.com/rcore-os
+@ArceOS 开源社区：github.com/arceos-org
 
 特别鸣谢：marp, AweSome-marp 提供幻灯片生成
