@@ -47,20 +47,21 @@ headingDivider: [2,3]
 <!--
 1995年左右，ENGLER D R, KAASHOEK M F, O’TOOLE J 提出了一种相对于宏内核，微内核而言不同的新的内核形态，即外核(ExoKernel)。
 外核架构与传统的操作系统架构不同，它将所有硬件资源安全地导出到不受信任的库操作系统（LibOS）。LibOS使用此接口来实现系统对象和策略。这种资源保护与管理的分离允许通过扩展、专门化甚至替换库来定制传统操作系统抽象的特定于应用程序的定制。
+TODO：不是逐字稿
 -->
 
 ### Rethinking the library OS from the top dow
-<!-- _class: fixedtitleA -->
-<!-- _class: navbar -->
+<!-- _class: fixedtitleA navbar -->
 <!-- _header: \ **发展历史** *开发背景* *ArceOS整体架构* *ArceOS特性*-->
  
 ![auto w:900 h:580](../images/arceos/RefactorWni7.png)
 
 <!--
 类似于这个思路，PORTER 等将简单的单片操作系统 Win7 重构成为 Library OS，使用一个简单的抽象集连接了 Library OS 和 Host OS。
+TODO：添加更多内容
 -->
 
-### Unikernel
+### Unikernel::HermiTux
 <!-- _class: fixedtitleA -->
 <!-- _class: navbar -->
 <!-- _header: \ **发展历史** *开发背景* *ArceOS整体架构* *ArceOS特性*-->
@@ -74,20 +75,64 @@ HermiTux 通过在系统调用级模拟 Linux 应用程序二进制接口（ABI�
 -->
 
 ### Unikraft
+<!-- _class: cols-2 navbar-->
+<!-- _header: \ **发展历史** *开发背景* *ArceOS整体架构* *ArceOS特性*-->
+
+<div class=ldiv>
+
+**成果**
+
+- 完全模块化的操作系统基元
+- 暴露了一组可组合的，面相性能的 API 以方便开发者获得高性能
+
+与现有的应用（nginx, SQLite, Redis）进行对比表明：
+
+- 相较于 Linux 虚拟机而言，性能提升了 1.7 - 2.7 倍
+- 应用的镜像文件大小约为 1MB，运行时需要不超过 10MB 的内存
+- 除虚拟机启动时间外，启动时间约为 1ms （总启动时间 3-40ms）
+
+</div>
+
+<div class=rdiv>
+
+**设计目标**
+
+- 单一地址空间：不同应用之间通过网络进行通信
+- 完全模块化系统：所有组件都可以根据需要删除
+- 单一特权级：不存在用户/内核空间的分离
+- 静态链接：编译器功能（DCE, LTO）
+- POSIX：支持接口的同时允许API下实现专用化
+- 平台抽象化：无缝为不同Hyper/VMM生成镜像
+
+</div>
+
+<!--
+LibOS：应用程序内核必须静态链接在一起，用函数调用替换系统调用
+Unikernel：内核只运行一个应用程序，说明内核需要怎么定制
+
+
+这个地方其实API就是某种程度上的函数调用
+由于高性能清凉，要干的事情又很少，没虚存什么的因此启动速度快
+只想服务一个应用程序，这样可以不使用地址空间
+这个地方所说的所有组件包括操作系统基元，驱动程序，平台代码和库都可以根据需要添加和删除，甚至API。
+不存在用户/内核空间的分离以避免昂贵的处理器模式切换，但是这不排斥区隔化以合理的配置开销。
+通过编译器实现死代码消除，链接时优化（一般内核而言，由于无法知晓应用程序使用情况，因此需要实现所有的系统调用，包括但不限于特权级，地址空间，上下文）【正常操作系统不可能支持这个功能的】
+
+unikraft 实际上真正让他能够构建出来那么好的项目的元婴在于它的构建系统。他通过kconfig和一些其他的基于文本的构建系统，还有两个命令行工具实现了自动配置文件和下载脚本等功能。（有点像 Cargo）
+-->
+
+### Unikraft
 <!-- _class: fixedtitleA navbar-->
 <!-- _header: \ **发展历史** *开发背景* *ArceOS整体架构* *ArceOS特性*-->
 
 ![](../images/arceos/Unikraft.png)
 
 <!--
-在 21 年的时候，来自德国和法国的多个研究机构，以 C 语言为主体，实现了一个真正意义上完整的完全模块化的微库操作系统，他将操作系统的所有原语完全模块化，并提供了一组可组合的、面向性能的 API。
-TODO 考虑要不要加有关于链接的说明
+libc 把系统调用改成函数调用了
 -->
 
-
 ### Theseus
-<!-- _class: fixedtitleA largetext -->
-<!-- _class: navbar -->
+<!-- _class: fixedtitleA largetext navbar -->
 <!-- _header: \ **发展历史** *开发背景* *ArceOS整体架构* *ArceOS特性*-->
 
 Theseus是一个用Rust从头开始编写的新操作系统，旨在尝试新的操作系统结构，更好的状态管理，以及如何利用语言内设计原则将操作系统的责任（如资源管理）转移到编译器中。
@@ -123,9 +168,10 @@ MappedPages（MP）对象是忒修斯对所拥有的内存区域的抽象
 
 
 ### AcerOS::前言
-<!-- _class: fixedtitleA navbar-->
+<!-- _class: cols-2 navbar-->
 <!-- _header: \ *发展历史* **开发背景** *ArceOS整体架构* *ArceOS特性*-->
 
+<div class=ldiv>
 
 ⽬前计算机软硬件的发展趋势：
 - 硬件：新型硬件层出不穷
@@ -134,6 +180,14 @@ MappedPages（MP）对象是忒修斯对所拥有的内存区域的抽象
 操作系统：发展滞后
 通⽤ OS：Linux，Windows
 实时 OS：RT-Thread、FreeRTOS
+
+</div>
+
+<div class=rimg>
+
+![](../images/arceos/OS.png)
+
+</div>
 
 <!--
 小型的专用化OS才是今后的研发方向，
@@ -510,6 +564,7 @@ TODO
 
 @Repo: github.com/arceos-org/arceos
 @Email: 18922251299@163.com
+@WeChat：OneDragon424
 @操作系统训练营： github.com/learningos
 @rCoreOS开源社区：github.com/rcore-os
 @ArceOS 开源社区：github.com/arceos-org
