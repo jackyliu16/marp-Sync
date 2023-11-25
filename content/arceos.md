@@ -572,13 +572,26 @@ ArceOS 组件化操作系统充分的利用了Rust在测试框架上的机制，
 -->
 
 ## THANKS !
-<!-- _class: largetext -->
+<!-- _class: cols-2-64 largetext -->
 
-@Repo: github.com/arceos-org/arceos
+<div class=ldiv>
+
 @Speaker Email: 18922251299@163.com
 @Speaker WeChat：OneDragon424
+@Top Maintainer Email: equation618@gmail.com
+@Top Maintainer Wechat: equation314
+
+@Repo: github.com/arceos-org/arceos
 @操作系统训练营： github.com/learningos
 @rCoreOS开源社区：github.com/rcore-os
 @ArceOS 开源社区：github.com/arceos-org
 
-特别鸣谢：marp, AweSome-marp 提供幻灯片生成
+特别鸣谢：marp, AweSome-marp 提供幻灯片生成 
+
+</div>
+
+<div class=rimg>
+
+![h:300 w:300](../images/wechat.png)
+
+</div>
