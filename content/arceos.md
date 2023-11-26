@@ -579,7 +579,7 @@ ArceOS 组件化操作系统充分的利用了Rust在测试框架上的机制，
 @Speaker Email: 18922251299@163.com
 @Speaker WeChat：OneDragon424
 @Top Maintainer Email: equation618@gmail.com
-@Top Maintainer Wechat: equation314
+@Coordinator Wechat: limingth
 
 @Repo: github.com/arceos-org/arceos
 @操作系统训练营： github.com/learningos
